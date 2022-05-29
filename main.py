@@ -1,7 +1,12 @@
 class Pracownik:
-  def __init__(self, imie, wynagrodzenie, skladki, zdrowotnaO, zdrowotnaD, koszt, skladkaDoch, skladkaZdr, podatek, wyplata, skladkiPrac, lacznyKoszt):
+  def __init__(self, imie, wynagrodzenie)
+    self.imie = str(imie)
+    self.wynagrodzenie = int(wynagrodzenie)
+
+  def rerp(self):
+    return f"{self.imie} {self.wynagrodzenie}"
+
     self.imie = imie
-    self.wynagrodzenie = wynagrodzenie
     self.skladki = skladki
     self.zdrowotnaO = wynagrodzenie - skladki
     self.zdrowotnaD = wynagrodzenie - skladki
@@ -16,9 +21,16 @@ class Pracownik:
     self.skladkiPrac = skladkiPrac
     self.lacznyKoszt = lacznyKoszt
 
-  def oblicz_skladke(self, skladki) -> float:
-    return '%.2f' %sum({self.wynagrodzenie} % 9,76 + {self.wynagrodzenie} % 1,5 + {self.wynagrodzenie} % 2,45)
-  
+  def oblicz_skladki(self, skladki) -> float:
+      self.skladki = round(self.wynagrodzenie*0.0976,2)+round(self.wynagrodzenie*0.065,2)+round(self.wynagrodzenie*0.0193,2)+round(self.wynagrodzenie*0.0245,2)+round(self.wynagrodzenie*0.001,2)
+      return round(self.skladki,2)
+  def koszt(self):
+      self.skladki = round(self.wynagrodzenie + skladki, 2)
+      return self.koszt
+
+  def suma(self):
+      return round(self.wynagrodzenie + self.oblicz_skladki(),2)
+
   def oblicz_zdrowotnaO(self, zdrowotnaO) -> float:
     return '%.2f' %({self.zdrowotna} % 9)
   def oblicz_zdrowotnaD(self, zdrowotnaD) -> float:
@@ -36,7 +48,9 @@ class Pracownik:
   def oblicz_lacznyKoszt(self.lacznyKoszt) -> float:
     return '%.2f' %({self.wynagrodzenie} + {self.oblicz_lacznyKoszt})
 
-  def suma_wynagrodzenia(self):
+liczba_pracownikow = int(input())
+pracownicy = []
+def suma_wynagrodzenia(self):
     wynik = "{self.wynagrodzenie} + {self.skladki} {self.wynagrodzenie} {self.skladki} {self.koszt}"
     if sum > 0:
       wynik += sum
@@ -44,4 +58,3 @@ class Pracownik:
         sum = 0
     return wynik
 
-#wstawic petle z pracownikami jako print
