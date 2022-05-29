@@ -45,8 +45,8 @@ wynagrodzenie_cale = 0
 for j in range (liczba_pracownikow):
   wynagrodzenie_cale += pracownicy[j].suma()
   imie = pracownicy[j].imie
-  wynagrodzenie = wynagrodzenie[j].wynagrodzenie
-  print(imie, f"{pracownicy[j].oblicz():.2f}", f"{pracownicy[i].oblicz_skladki():.2f}", f"{pracownicy[i].koszt():.2f}")
+  wynagrodzenie = pracownicy[j].wynagrodzenie
+  print(imie, f"{pracownicy[j].oblicz():.2f}", f"{pracownicy[j].oblicz_skladki():.2f}", f"{pracownicy[j].koszt():.2f}")
 
 print(wynagrodzenie_cale)
 
