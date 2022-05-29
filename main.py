@@ -17,7 +17,7 @@ class Pracownik:
       i = round(((h)*0.18)-46.33,2)
       j = round(i-e,2)
       k = round(j, 0)
-      self.oblicznetto = round ((self.wynagrodzenie - c - k),2)
+      self.oblicznetto = round ((self.wynagrodzenie -skladki - c - k),2)
       return self.oblicznetto
 
   def oblicz_skladki(self):
