@@ -12,7 +12,7 @@ class Pracownik:
       c = round(b*0.09,2)
       e = round(b*0.0775,2)
       f = round(111,25,2)
-      g = round(self.wynagrdzenie - f -a,2)
+      g = round(self.wynagrodzenie - f - skladki,2)
       h = round(g,0)
       i = round(i-e,2)
       j = round(i-e,2)
@@ -20,15 +20,15 @@ class Pracownik:
       self.oblicznetto = round ((self.wynagrodzenie - c - k),2)
       return self.oblicznetto
 
-def oblicz_skladki(self):
-  self.skladkiO = round(self.wynagrodzenie*0.0976,2) + round(self.wynagrodzenie*0.065,2) + round(self.wynagrodzenie*0.0193,2)+ round(self.wynagrodzenie*0.0245,2) + round(self.wynagrodzenie*0.001,2)
-  return round(self.skladki,2)
+  def oblicz_skladki(self):
+    self.skladkiO = round(self.wynagrodzenie*0.0976,2) + round(self.wynagrodzenie*0.065,2) + round(self.wynagrodzenie*0.0193,2)+ round(self.wynagrodzenie*0.0245,2) + round(self.wynagrodzenie*0.001,2)
+    return round(self.skladkiO,2)
 
-def koszt(self):
-  self.koszt = round(self.wynagrodzenie + self.skladki,2)
-  return self.koszt
-def suma(self):
-  return round(self.wynagrodzenie + self.oblicz_skladki(),2)
+  def koszt(self):
+    self.koszt = round(self.wynagrodzenie + self.skladkiO,2)
+    return self.koszt
+  def suma(self):
+    return round(self.wynagrodzenie + self.oblicz_skladki(),2)
 
 liczba_pracownikow = int(input())
 pracownicy = []
