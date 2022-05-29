@@ -1,5 +1,5 @@
 class Pracownik:
-  def __init__(self, imie, wynagrodzenie)
+  def __init__(self, imie, wynagrodzenie):
     self.imie = str(imie)
     self.wynagrodzenie = int(wynagrodzenie)
 
