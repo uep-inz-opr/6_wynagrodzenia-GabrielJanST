@@ -6,15 +6,15 @@ class Pracownik:
   def dane_pracownik(self):
     return f"{self.imie} {self.wynagrodzenie}"
 
-  def oblicz(self) -> float:
+  def oblicz(self):
       skladki = round(round(self.wynagrodzenie*0.0976,2)+round(self.wynagrodzenie*0.015,2)+round(self.wynagrodzenie*0.0245,2),2)
       b = round(self.wynagrodzenie-skladki,2)
       c = round(b*0.09,2)
       e = round(b*0.0775,2)
-      f = round(111,25,2)
+      f = round(111.25,2)
       g = round(self.wynagrodzenie - f - skladki,2)
       h = round(g,0)
-      i = round(i-e,2)
+      i = round(((h)*0.18)-46.33,2)
       j = round(i-e,2)
       k = round(j, 0)
       self.oblicznetto = round ((self.wynagrodzenie - c - k),2)
@@ -33,7 +33,7 @@ class Pracownik:
 liczba_pracownikow = int(input())
 pracownicy = []
 
-for i in range(liczba_pracownikow):
+for l in range(liczba_pracownikow):
   dane = input().split()
   imie = dane[0]
   wynagrodzenie = int(dane[1])
@@ -42,11 +42,11 @@ for i in range(liczba_pracownikow):
 
 wynagrodzenie_cale = 0
 
-for j in range (liczba_pracownikow):
-  wynagrodzenie_cale += pracownicy[j].suma()
-  imie = pracownicy[j].imie
-  wynagrodzenie = pracownicy[j].wynagrodzenie
-  print(imie, f"{pracownicy[j].oblicz():.2f}", f"{pracownicy[j].oblicz_skladki():.2f}", f"{pracownicy[j].koszt():.2f}")
+for p in range (liczba_pracownikow):
+  wynagrodzenie_cale += pracownicy[p].suma()
+  imie = pracownicy[p].imie
+  wynagrodzenie = pracownicy[p].wynagrodzenie
+  print(imie, f"{pracownicy[p].oblicz():.2f}", f"{pracownicy[p].oblicz_skladki():.2f}", f"{pracownicy[p].koszt():.2f}")
 
 print(wynagrodzenie_cale)
 
